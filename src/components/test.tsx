@@ -29,7 +29,9 @@ export default class Menu extends React.Component<{}, State> {
   render() {
     return (
       <Fragment>
-        <ToggleButton onClick={this.toggleOpenMenu}>button</ToggleButton>
+        <ToggleButtonWrapper>
+          <ToggleButton onClick={this.toggleOpenMenu}>button</ToggleButton>
+        </ToggleButtonWrapper>
         <MenuWrapper>
           <Transition in={this.state.isMenuOpen} timeout={1000}>
             {state => (
@@ -41,7 +43,7 @@ export default class Menu extends React.Component<{}, State> {
                   <Fragment>
                     <MenuTitle state={state}>menu</MenuTitle>
                     <MenuItem state={state} delay={0.3}>
-                      <Button onClick={() => history.push("/top")}>top</Button>
+                      <Button onClick={() => history.push("/")}>top</Button>
                     </MenuItem>
                     <MenuItem state={state} delay={0.5}>
                       <Button onClick={() => history.push("/about")}>
@@ -98,10 +100,19 @@ const getMenuItemStyle = (props: TransitionStatus, delay: number) => {
     `;
   }
 };
-const ToggleButton = styled.button`
+const ToggleButtonWrapper = styled.div`
   position: absolute;
   right: 10px;
   z-index: 10;
+`;
+const ToggleButton = styled(Button)`
+  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
+  border-radius: 3px;
+  border: 0;
+  color: white;
+  height: 48px;
+  padding: 0 30px;
+  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
 `;
 
 const MenuFrame = styled.div<{ isMenuOpen: boolean; isFirst: boolean }>`
@@ -170,9 +181,9 @@ const MenuItem = styled.div<{ state: TransitionStatus; delay: number }>`
 
 const MenuWrapper = styled.div`
   box-sizing: border-box;
-  height: calc(100% - 20px);
+  height: calc(100% - 60px);
   position: absolute;
   width: 100px;
   right: 10px;
-  top: 10px;
+  top: 50px;
 `;
