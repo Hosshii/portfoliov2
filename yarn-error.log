@@ -1,8 +1,8 @@
 Arguments: 
-  /Users/wistre/.nodebrew/node/v12.2.0/bin/node /Users/wistre/.nodebrew/current/bin/yarn add react-bro
+  /Users/wistre/.nodebrew/node/v12.2.0/bin/node /Users/wistre/.nodebrew/current/bin/yarn add use-react-router @types/use-react-router
 
 PATH: 
-  /var/folders/ng/70_fv0yn44j9h0phwc1f_t000000gp/T/yarn--1581924918853-0.6841164243392606:/Users/wistre/Workspace/portfolio/node_modules/.bin:/Users/wistre/.config/yarn/link/node_modules/.bin:/Users/wistre/.nodebrew/node/v12.2.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/wistre/.nodebrew/node/v12.2.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/wistre/.nodebrew/node/v12.2.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/wistre/google-cloud-sdk/bin:/Users/wistre/.goenv/shims:/Users/wistre/.goenv/bin:/Users/wistre/.pyenv/shims:/Users/wistre/.nodebrew/current/bin:/Users/wistre/bin:/Users/wistre/go/bin:/Users/wistre/.pyenv/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/wistre/google-cloud-sdk/bin:/Users/wistre/.goenv/shims:/Users/wistre/.goenv/bin:/Users/wistre/.pyenv/shims:/Users/wistre/.nodebrew/current/bin:/Users/wistre/bin:/usr/local/opt/gnu-tar/libexec/gnubin
+  /Users/wistre/google-cloud-sdk/bin:/Users/wistre/.goenv/shims:/Users/wistre/.goenv/bin:/Users/wistre/.pyenv/shims:/Users/wistre/.nodebrew/current/bin:/Users/wistre/bin:/Users/wistre/go/bin:/Users/wistre/.pyenv/bin:/usr/local/opt/gnu-tar/libexec/gnubin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/wistre/google-cloud-sdk/bin:/Users/wistre/.goenv/shims:/Users/wistre/.goenv/bin:/Users/wistre/.pyenv/shims:/Users/wistre/.nodebrew/current/bin:/Users/wistre/bin:/usr/local/opt/gnu-tar/libexec/gnubin
 
 Yarn version: 
   1.16.0
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-bro: Not found
+  Error: https://registry.yarnpkg.com/@types%2fuse-react-router: Not found
       at Request.params.callback [as _callback] (/Users/wistre/.nodebrew/node/v12.2.0/lib/node_modules/yarn/lib/cli.js:66091:18)
       at Request.self.callback (/Users/wistre/.nodebrew/node/v12.2.0/lib/node_modules/yarn/lib/cli.js:129590:22)
       at Request.emit (events.js:196:13)
@@ -34,7 +34,7 @@ npm manifest:
     "main": "index.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "parcel ./src/index.html -p 3000 --open",
+      "start": "parcel ./.public/index.html -p 3000 --open",
       "build": "parcel build ./src/index.html"
     },
     "author": "",
@@ -43,10 +43,12 @@ npm manifest:
       "@material-ui/core": "^4.9.3",
       "@material-ui/styles": "^4.9.0",
       "@types/react-router-dom": "^5.1.3",
+      "@types/react-transition-group": "^4.2.3",
       "@types/styled-components": "^4.4.3",
       "react": "^16.12.0",
       "react-dom": "^16.12.0",
       "react-router-dom": "^5.1.2",
+      "react-transition-group": "^4.3.0",
       "styled-components": "^5.0.1"
     },
     "devDependencies": {
@@ -1027,7 +1029,7 @@ Lockfile:
       "@types/history" "*"
       "@types/react" "*"
   
-  "@types/react-transition-group@^4.2.0":
+  "@types/react-transition-group@^4.2.0", "@types/react-transition-group@^4.2.3":
     version "4.2.3"
     resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.2.3.tgz#4924133f7268694058e415bf7aea2d4c21131470"
     integrity sha512-Hk8jiuT7iLOHrcjKP/ZVSyCNXK73wJAUz60xm0mVhiRujrdiI++j4duLiL282VGxwAgxetHQFfqA29LgEeSkFA==
