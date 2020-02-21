@@ -12,8 +12,9 @@ interface State {
   isFirst: boolean;
 }
 // interface Props {
-//   history: H.History;
+//   history: React.CSSProperties;
 // }
+
 export default class Menu extends React.Component<{}, State> {
   constructor(props: any) {
     super(props);
@@ -45,17 +46,19 @@ export default class Menu extends React.Component<{}, State> {
                   <Fragment>
                     <MenuTitle state={state}>menu</MenuTitle>
                     <MenuItem state={state} delay={0.3}>
-                      <Button onClick={() => history.push("/")}>top</Button>
+                      <ItemButton onClick={() => history.push("/")}>
+                        top
+                      </ItemButton>
                     </MenuItem>
                     <MenuItem state={state} delay={0.5}>
-                      <Button onClick={() => history.push("/about")}>
+                      <ItemButton onClick={() => history.push("/about")}>
                         about
-                      </Button>
+                      </ItemButton>
                     </MenuItem>
                     <MenuItem state={state} delay={0.7}>
-                      <Button onClick={() => history.push("/work")}>
+                      <ItemButton onClick={() => history.push("/work")}>
                         work
-                      </Button>
+                      </ItemButton>
                     </MenuItem>
                   </Fragment>
                 )}
