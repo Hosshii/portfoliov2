@@ -5,6 +5,7 @@ import { TransitionStatus } from "react-transition-group/Transition";
 import { Button } from "@material-ui/core";
 // import * as H from "history";
 import history from "../common/history";
+import Frame from "../common/frame";
 
 interface State {
   isMenuOpen: boolean;
@@ -35,9 +36,10 @@ export default class Menu extends React.Component<{}, State> {
         <MenuWrapper>
           <Transition in={this.state.isMenuOpen} timeout={1000}>
             {state => (
-              <MenuFrame
+              <Frame
                 isMenuOpen={this.state.isMenuOpen}
                 isFirst={this.state.isFirst}
+                time={0.8}
               >
                 {state === "entered" && (
                   <Fragment>
@@ -57,7 +59,7 @@ export default class Menu extends React.Component<{}, State> {
                     </MenuItem>
                   </Fragment>
                 )}
-              </MenuFrame>
+              </Frame>
             )}
           </Transition>
         </MenuWrapper>
@@ -115,61 +117,16 @@ const ToggleButton = styled(Button)`
   box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
 `;
 
-const MenuFrame = styled.div<{ isMenuOpen: boolean; isFirst: boolean }>`
-  position: absolute;
-  border-radius: 10px;
-  border: solid 1px black;
-  width: 100%;
-  height: 100%;
-  /* background-color: #090b0a; */
-  animation: ${({ isMenuOpen, isFirst }) =>
-      isFirst || isMenuOpen ? "fadeInFrame" : "fadeOutFrame"}
-    0.8s ease forwards ${({ isFirst }) => (isFirst ? "paused" : "running")};
-  @keyframes fadeInFrame {
-    0% {
-      width: 0;
-      height: 0;
-      right: 60px;
-      opacity: 0;
-    }
-    30% {
-      width: 100%;
-      height: 0;
-      right: 10px;
-      opacity: 1;
-    }
-    100% {
-      width: 100%;
-      height: 100%;
-      right: 10px;
-    }
-  }
-  @keyframes fadeOutFrame {
-    0% {
-      width: 100%;
-      height: 100%;
-      right: 10px;
-      opacity: 1;
-    }
-    70% {
-      width: 100%;
-      height: 0;
-      right: 10px;
-      opacity: 1;
-    }
-    100% {
-      width: 0;
-      height: 0;
-      right: 60px;
-      opacity: 0;
-    }
-  }
+const ItemButton = styled(Button)`
+  color: #76fb58;
+  background-color: #090b0a;
 `;
 
 const MenuTitle = styled.div<{ state: TransitionStatus }>`
   ${({ state }) => getMenuTitleStyle(state)}
   width: 100%;
   text-align: left;
+  color: #76fb58;
 `;
 
 const MenuItem = styled.div<{ state: TransitionStatus; delay: number }>`
