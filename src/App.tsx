@@ -5,11 +5,12 @@ import Top from "./pages/top";
 import About from "./pages/about";
 import Work from "./pages/work";
 import history from "./common/history";
+import styled from "styled-components";
 
 export default class App extends React.Component {
   render() {
     return (
-      <Fragment>
+      <Wrapper>
         <Router history={history}>
           <Menu></Menu>
           <Switch>
@@ -18,7 +19,15 @@ export default class App extends React.Component {
             <Route path="/work" exact component={Work} />
           </Switch>
         </Router>
-      </Fragment>
+      </Wrapper>
     );
   }
 }
+
+const Wrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+`;
