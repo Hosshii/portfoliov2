@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Frame from "../common/frame";
+import device from "../utils/style-util";
 
 interface State {
   isOpen: boolean;
@@ -19,15 +20,16 @@ export default class Top extends React.Component<{}, State> {
   render() {
     return (
       <Wrapper>
-        <ExtendFrame
+        <Frame
           isMenuOpen={this.state.isOpen}
           isFirst={this.state.isFirst}
           time={1}
           fadeInFrame={fadeInFrame}
           fadeOutFrame={fadeOutFrame}
+          bold={4}
         >
           top
-        </ExtendFrame>
+        </Frame>
       </Wrapper>
     );
   }
@@ -36,11 +38,17 @@ export default class Top extends React.Component<{}, State> {
 const Wrapper = styled.div`
   position: absolute;
   top: 5%;
-  left: 10%;
-  width: 80%;
+  @media ${device.mobileS} {
+    left: 0;
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    left: 130px;
+    width: calc(100% - 260px);
+    /* width: 80%; */
+  }
   height: 90%;
   margin: auto;
-  border: solid 1px red;
 `;
 
 const fadeInFrame = keyframes`
@@ -84,8 +92,4 @@ const fadeOutFrame = keyframes`
     top: 50%;
     opacity: 0;
   }
-`;
-
-const ExtendFrame = styled(Frame)`
-  border: solid 3px #1f4017;
 `;
