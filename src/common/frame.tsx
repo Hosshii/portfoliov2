@@ -49,9 +49,10 @@ const Frame = styled.div<{ props: Props }>`
   position: absolute;
   overflow: scroll;
   border-radius: 10px;
-  border: solid 1px #1f4017;
+  border: solid ${({ props }) => props.bold}px #1f4017;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
   background-color: #090b0a;
   animation: ${({ props }) =>
       props.isFirst || props.isMenuOpen
@@ -66,6 +67,7 @@ interface Props {
   time: number;
   fadeInFrame: Keyframes;
   fadeOutFrame: Keyframes;
+  bold: number;
   children: ReactNode | null;
 }
 
@@ -74,6 +76,7 @@ MenuFrame.defaultProps = {
   isFirst: false,
   time: 1,
   fadeInFrame: defaultFadeInFrame,
-  fadeOutFrame: defaultFadeOutFrame
+  fadeOutFrame: defaultFadeOutFrame,
+  bold: 1
 } as Props;
 export default MenuFrame;
