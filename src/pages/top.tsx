@@ -1,21 +1,23 @@
-import React from "react";
-import styled, { keyframes } from "styled-components";
-import Frame from "../common/frame";
-import device from "../utils/style-util";
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+import Frame from '../common/frame'
+import device from '../utils/media-size'
+import { FontColor } from '../utils/color'
+import CustomFont from '../common/customfont'
 
 interface State {
-  isOpen: boolean;
-  isFirst: boolean;
+  isOpen: boolean
+  isFirst: boolean
 }
 export default class Top extends React.Component<{}, State> {
   constructor(props: any) {
-    super(props);
-    this.state = { isFirst: true, isOpen: false };
+    super(props)
+    this.state = { isFirst: true, isOpen: false }
   }
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ isOpen: true, isFirst: false });
-    }, 500);
+      this.setState({ isOpen: true, isFirst: false })
+    }, 500)
   }
   render() {
     return (
@@ -28,10 +30,12 @@ export default class Top extends React.Component<{}, State> {
           fadeOutFrame={fadeOutFrame}
           bold={4}
         >
-          top
+          <CustomFont color="red" delay={1.5}>
+            Welcome My Website
+          </CustomFont>
         </Frame>
       </Wrapper>
-    );
+    )
   }
 }
 
@@ -49,7 +53,7 @@ const Wrapper = styled.div`
   }
   height: 90%;
   margin: auto;
-`;
+`
 
 const fadeInFrame = keyframes`
     0% {
@@ -72,7 +76,8 @@ const fadeInFrame = keyframes`
       width: 100%;
       height: 100%;
     }
-`;
+`
+
 const fadeOutFrame = keyframes`
   0% {
       width: 100%;
@@ -92,4 +97,4 @@ const fadeOutFrame = keyframes`
     top: 50%;
     opacity: 0;
   }
-`;
+`
