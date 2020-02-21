@@ -45,17 +45,17 @@ export default class Menu extends React.Component<{}, State> {
                 {state === "entered" && (
                   <Fragment>
                     <MenuTitle state={state}>menu</MenuTitle>
-                    <MenuItem state={state} delay={0.3}>
+                    <MenuItem state={state} delay={0.2}>
                       <ItemButton onClick={() => history.push("/")}>
                         top
                       </ItemButton>
                     </MenuItem>
-                    <MenuItem state={state} delay={0.5}>
+                    <MenuItem state={state} delay={0.4}>
                       <ItemButton onClick={() => history.push("/about")}>
                         about
                       </ItemButton>
                     </MenuItem>
-                    <MenuItem state={state} delay={0.7}>
+                    <MenuItem state={state} delay={0.6}>
                       <ItemButton onClick={() => history.push("/work")}>
                         work
                       </ItemButton>
@@ -148,4 +148,5 @@ const MenuWrapper = styled.div`
   right: 10px;
   top: 50px;
   position: fixed;
+  z-index: 10;
 `;
