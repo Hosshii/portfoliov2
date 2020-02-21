@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Router, Route, Switch } from "react-router-dom";
 import Menu from "./components/menu";
 import Top from "./pages/top";
@@ -29,6 +29,6 @@ const Wrapper = styled.div`
   padding: 0;
   background-color: black;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   box-sizing: border-box;
 `;
