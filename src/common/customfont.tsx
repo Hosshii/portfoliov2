@@ -6,7 +6,7 @@ interface Props {
   color: string
   size: number
   delay: number
-  animation: Keyframes
+  animation: Keyframes | null
   time: number
   children: ReactNode | null
   textAlign: 'right' | 'left' | 'center'
@@ -24,21 +24,11 @@ const _Font = styled.div<{ props: Props }>`
   opacity: 0;
 `
 
-const defaultFadeIn = keyframes`
-  0% {
-    opacity: 0;
-    transform:translateX(0px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(10px);
-  } 
-`
 CustomFont.defaultProps = {
   color: FontColor.Light,
   size: 30,
   delay: 0,
-  animation: defaultFadeIn,
+  animation: null,
   time: 1,
   textAlign: 'center'
 }
