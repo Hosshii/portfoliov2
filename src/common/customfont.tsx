@@ -9,6 +9,7 @@ interface Props {
   animation: Keyframes
   time: number
   children: ReactNode | null
+  textAlign: 'right' | 'left' | 'center'
 }
 const CustomFont = (props: Props) => {
   return <_Font props={props}>{props.children}</_Font>
@@ -17,8 +18,8 @@ const _Font = styled.div<{ props: Props }>`
   animation: ${({ props }) => props.animation} ${({ props }) => props.time}s ease ${({ props }) => props.delay}s
     forwards;
   width: 100%;
-  text-align: left;
-  color: #76fb58;
+  text-align: ${({ props }) => props.textAlign};
+  color: ${({ props }) => props.color};
   font-size: ${({ props }) => props.size}px;
   opacity: 0;
 `
@@ -36,9 +37,10 @@ const defaultFadeIn = keyframes`
 CustomFont.defaultProps = {
   color: FontColor.Light,
   size: 30,
-  delay: 1,
+  delay: 0,
   animation: defaultFadeIn,
-  time: 1
+  time: 1,
+  textAlign: 'center'
 }
 
 export default CustomFont
