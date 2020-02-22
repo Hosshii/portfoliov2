@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes, Keyframes } from 'styled-components'
 import { Transition } from 'react-transition-group'
 import { TransitionStatus } from 'react-transition-group/Transition'
 import { Button } from '@material-ui/core'
 // import * as H from "history";
 import history from '../common/history'
 import Frame from '../common/frame'
+import CustomFont from '../common/customfont'
 
 interface State {
   isMenuOpen: boolean
@@ -40,16 +41,19 @@ export default class Menu extends React.Component<{}, State> {
               <Frame isMenuOpen={this.state.isMenuOpen} isFirst={this.state.isFirst} time={0.8}>
                 {state === 'entered' && (
                   <Fragment>
-                    <MenuTitle state={state}>menu</MenuTitle>
-                    <MenuItem state={state} delay={0.2}>
+                    <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left">
+                      Menu
+                    </CustomFont>
+                    {/* <MenuTitle state={state}>menu</MenuTitle> */}
+                    <CustomFont delay={0.2} animation={ShowMenuText} textAlign="right">
                       <ItemButton onClick={() => history.push('/')}>top</ItemButton>
-                    </MenuItem>
-                    <MenuItem state={state} delay={0.4}>
+                    </CustomFont>
+                    <CustomFont delay={0.4} animation={ShowMenuText} textAlign="right">
                       <ItemButton onClick={() => history.push('/about')}>about</ItemButton>
-                    </MenuItem>
-                    <MenuItem state={state} delay={0.6}>
+                    </CustomFont>
+                    <CustomFont delay={0.6} animation={ShowMenuText} textAlign="right">
                       <ItemButton onClick={() => history.push('/work')}>work</ItemButton>
-                    </MenuItem>
+                    </CustomFont>
                   </Fragment>
                 )}
               </Frame>
@@ -61,40 +65,26 @@ export default class Menu extends React.Component<{}, State> {
   }
 }
 
-const getMenuTitleStyle = (props: TransitionStatus) => {
-  if (props === 'entered') {
-    return `
-      animation: show-menu-title 0.5s ease forwards ;
-      @keyframes show-menu-title {
-        0% {
-          opacity: 0;
-          transform:translateX(0px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(10px);
-        }
-      }
-    `
+const ShowMenuText = keyframes`
+  0% {
+    opacity: 0;
+    transform:translateX(-10px);
   }
-}
-const getMenuItemStyle = (props: TransitionStatus, delay: number) => {
-  if (props === 'entered') {
-    return `
-      animation: show-menu-text 0.5s ease ${delay}s forwards ;
-      @keyframes show-menu-text {
-        0% {
-          opacity: 0;
-          transform:translateX(-10px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(-5px);
-        }
-      }
-    `
+  100% {
+    opacity: 1;
+    transform: translateX(-5px);
   }
-}
+`
+const ShowMenuTitle = keyframes`
+  0% {
+    opacity: 0;
+    transform:translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(10px);
+  }
+`
 const ToggleButtonWrapper = styled.div`
   position: fixed;
   /* position: absolute; */
@@ -114,20 +104,6 @@ const ToggleButton = styled(Button)`
 const ItemButton = styled(Button)`
   color: #76fb58;
   background-color: #090b0a;
-`
-
-const MenuTitle = styled.div<{ state: TransitionStatus }>`
-  ${({ state }) => getMenuTitleStyle(state)}
-  width: 100%;
-  text-align: left;
-  color: #76fb58;
-`
-
-const MenuItem = styled.div<{ state: TransitionStatus; delay: number }>`
-  ${({ state, delay }) => getMenuItemStyle(state, delay)}
-  width: 100%;
-  text-align: right;
-  opacity: 0;
 `
 
 const MenuWrapper = styled.div`
