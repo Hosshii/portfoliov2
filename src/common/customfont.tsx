@@ -23,12 +23,20 @@ const _Font = styled.div<{ props: Props }>`
   font-size: ${({ props }) => props.size}px;
   opacity: 0;
 `
+const defaultAnimation = keyframes`
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+`
 
 CustomFont.defaultProps = {
   color: FontColor.Light,
   size: 30,
   delay: 0,
-  animation: null,
+  animation: defaultAnimation,
   time: 1,
   textAlign: 'center'
 }
