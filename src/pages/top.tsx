@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Frame from '../common/frame'
 import device from '../utils/media-size'
-import { FontColor } from '../utils/color'
 import CustomFont from '../common/customfont'
+import MyIcons, { MyIconProps } from '../components/links'
 
 interface State {
   isOpen: boolean
@@ -21,27 +21,48 @@ export default class Top extends React.Component<{}, State> {
   }
   render() {
     return (
-      <Wrapper>
-        <Frame
-          isMenuOpen={this.state.isOpen}
-          isFirst={this.state.isFirst}
-          time={1}
-          fadeInFrame={fadeInFrame}
-          fadeOutFrame={fadeOutFrame}
-          bold={4}
-        >
-          <CustomFont color="red" delay={1.5}>
-            Welcome My Website
-          </CustomFont>
-        </Frame>
-      </Wrapper>
+      <Fragment>
+        <TopWrapper>
+          <Frame
+            isMenuOpen={this.state.isOpen}
+            isFirst={this.state.isFirst}
+            time={1}
+            fadeInFrame={fadeInFrame}
+            fadeOutFrame={fadeOutFrame}
+            bold={4}
+          >
+            <CustomFont delay={1.5} animation={TitleFadeIn} textAlign="left">
+              Welcome to My Website
+            </CustomFont>
+          </Frame>
+        </TopWrapper>
+        <IconFrameWrapper>
+          <Frame
+            isMenuOpen={this.state.isOpen}
+            isFirst={this.state.isFirst}
+            time={1}
+            fadeInFrame={fadeInFrame}
+            fadeOutFrame={fadeOutFrame}
+            bold={4}
+          >
+            <IconWrapper>
+              <MyIcons icons={icon} />
+            </IconWrapper>
+          </Frame>
+        </IconFrameWrapper>
+      </Fragment>
     )
   }
 }
-
-const Wrapper = styled.div`
+const icon = [
+  { icon: ['fab', 'github'], color: 'red' },
+  { icon: ['fab', 'github'], color: 'red' }
+] as MyIconProps[]
+const TopWrapper = styled.div`
   position: absolute;
   top: 5%;
+  height: 70%;
+  margin: auto;
   @media ${device.mobileS} {
     left: 0;
     width: 100%;
@@ -49,12 +70,28 @@ const Wrapper = styled.div`
   @media ${device.laptop} {
     left: 130px;
     width: calc(100% - 260px);
-    /* width: 80%; */
   }
-  height: 90%;
-  margin: auto;
+`
+const IconFrameWrapper = styled.div`
+  position: absolute;
+  top: 80%;
+  height: 20%;
+  @media ${device.mobileS} {
+    left: 0;
+    width: 100%;
+  }
+  @media ${device.laptop} {
+    left: 150px;
+    width: calc(100% - 300px);
+  }
 `
 
+const IconWrapper = styled.div`
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  left: 25%;
+`
 const fadeInFrame = keyframes`
     0% {
       width: 0;
@@ -97,4 +134,14 @@ const fadeOutFrame = keyframes`
     top: 50%;
     opacity: 0;
   }
+`
+const TitleFadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform:translateX(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(10px);
+  } 
 `
