@@ -4,33 +4,46 @@ import styled from 'styled-components'
 import { FontColor } from '../utils/color'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 
-interface MyIconProps {
+export interface MyIconProps {
   size: FontAwesomeIconProps['size'] | undefined
   color: FontAwesomeIconProps['color'] | undefined
   icon: FontAwesomeIconProps['icon']
+  url: string
 }
-export interface MyIconsProps {
+
+interface MyIconsProps {
   icons: MyIconProps[]
 }
 
 const MyIcons = (props: MyIconsProps) => {
   var icons = []
   for (let prop of props.icons) {
-    icons.push(<FontAwesomeIcon icon={prop.icon} color={prop.color} size={prop.size} />)
+    icons.push(
+      <CustomLink>
+        <FontAwesomeIcon
+          key={icons.length}
+          icon={prop.icon}
+          color={prop.color}
+          size={prop.size}
+          onClick={() => window.open(prop.url, '_blank')}
+        />
+      </CustomLink>
+    )
   }
-  return (
-    <Wrapper>
-      {/* <FontAwesomeIcon icon={faCoffee} color="red"></FontAwesomeIcon> */}
-      {/* <FontAwesomeIcon icon={['fab', 'github']} color="red" size={props.size} />
-      <FontAwesomeIcon icon={['fab', 'twitter']} color={FontColor.Light} size={props.size} /> */}
-      {icons}
-    </Wrapper>
-  )
+  return <Wrapper>{icons}</Wrapper>
 }
 
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 100%;
+`
+const CustomLink = styled.div`
+  transition: transform 0.3s;
+  :hover {
+    transform: scale(1.2);
+  }
 `
 
 export default MyIcons
