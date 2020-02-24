@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { FrameColor } from '../utils/const'
 
 interface MyCardProps {
   width: React.CSSProperties['width']
@@ -11,7 +12,8 @@ const MyCard = styled.div<Partial<MyCardProps>>`
   height: ${({ height }) => height};
   text-align: ${({ textAlign }) => textAlign};
   position: relative;
-  padding: 10px;
+  padding: 25px;
+  border: solid 3px ${FrameColor.Light};
   /* background-color: red; */
 `
 
