@@ -1,8 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
-import { FontColor } from '../utils/const'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
 
 export interface MyIconProps {
   size: FontAwesomeIconProps['size'] | undefined
@@ -19,7 +17,7 @@ const MyIcons = (props: MyIconsProps) => {
   var icons = []
   for (let prop of props.icons) {
     icons.push(
-      <CustomLink>
+      <CustomLink key={prop.url}>
         <FontAwesomeIcon
           key={icons.length}
           icon={prop.icon}
