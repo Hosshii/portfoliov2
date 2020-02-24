@@ -39,3 +39,7 @@ export const device = {
   desktop: `(min-width: ${_deviceSize.desktop})`,
   desktopL: `(min-width: ${_deviceSize.desktop})`
 }
+export const url = {
+  github: 'https://github.com/WistreHosshii',
+  twitter: 'https://twitter.com/hosshii4'
+}
