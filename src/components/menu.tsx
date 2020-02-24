@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react'
 import styled, { keyframes, Keyframes } from 'styled-components'
 import { Transition } from 'react-transition-group'
-import { TransitionStatus } from 'react-transition-group/Transition'
 import { Button } from '@material-ui/core'
 // import * as H from "history";
 import history from '../common/history'
 import Frame from '../common/frame'
 import CustomFont from '../common/customfont'
+import { FontSize } from '../utils/const'
 
 interface State {
   isMenuOpen: boolean
@@ -41,7 +41,7 @@ export default class Menu extends React.Component<{}, State> {
               <Frame isMenuOpen={this.state.isMenuOpen} isFirst={this.state.isFirst} time={0.8}>
                 {state === 'entered' && (
                   <Fragment>
-                    <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left">
+                    <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left" size={FontSize.subtitle}>
                       Menu
                     </CustomFont>
                     {/* <MenuTitle state={state}>menu</MenuTitle> */}

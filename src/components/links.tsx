@@ -1,7 +1,7 @@
 import React from 'react'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import styled from 'styled-components'
-import { FontColor } from '../utils/color'
+import { FontColor } from '../utils/const'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 
 export interface MyIconProps {

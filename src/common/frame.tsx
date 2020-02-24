@@ -1,6 +1,6 @@
 import styled, { keyframes, Keyframes } from 'styled-components'
 import React, { ReactNode } from 'react'
-import { FrameColor } from '../utils/color'
+import { FrameColor } from '../utils/const'
 
 const MenuFrame = (props: Props) => {
   return <Frame props={props}>{props.children}</Frame>

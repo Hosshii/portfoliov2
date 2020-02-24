@@ -1,11 +1,11 @@
-import React from "react";
-import { Router, Route, Switch } from "react-router-dom";
-import Menu from "./components/menu";
-import Top from "./pages/top";
-import About from "./pages/about";
-import Work from "./pages/work";
-import history from "./common/history";
-import styled from "styled-components";
+import React from 'react'
+import { Router, Route, Switch } from 'react-router-dom'
+import Menu from './components/menu'
+import Top from './pages/top'
+import About from './pages/about'
+import Work from './pages/work'
+import history from './common/history'
+import styled from 'styled-components'
 
 export default class App extends React.Component {
   render() {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
           </Switch>
         </Router>
       </Wrapper>
-    );
+    )
   }
 }
 
@@ -29,6 +29,7 @@ const Wrapper = styled.div`
   padding: 0;
   background-color: black;
   width: 100%;
+  /* height: 100%; */
   min-height: 100%;
   box-sizing: border-box;
-`;
+`

@@ -1,15 +1,17 @@
 import styled, { keyframes, Keyframes } from 'styled-components'
 import React, { ReactNode } from 'react'
-import { FontColor } from '../utils/color'
+import { FontColor } from '../utils/const'
+import { FontSize } from '../utils/const'
 
 interface Props {
   color: string
-  size: number
+  size: React.CSSProperties['fontSize']
   delay: number
   animation: Keyframes | null
   time: number
   children: ReactNode | null
   textAlign: 'right' | 'left' | 'center'
+  padding: React.CSSProperties['padding']
 }
 const CustomFont = (props: Props) => {
   return <_Font props={props}>{props.children}</_Font>
@@ -20,8 +22,10 @@ const _Font = styled.div<{ props: Props }>`
   width: 100%;
   text-align: ${({ props }) => props.textAlign};
   color: ${({ props }) => props.color};
-  font-size: ${({ props }) => props.size}px;
+  font-size: ${({ props }) => props.size};
   opacity: 0;
+  box-sizing: border-box;
+  padding: ${({ props }) => props.padding};
 `
 const defaultAnimation = keyframes`
   0%{
@@ -34,11 +38,12 @@ const defaultAnimation = keyframes`
 
 CustomFont.defaultProps = {
   color: FontColor.Light,
-  size: 30,
+  size: FontSize.normal,
   delay: 0,
   animation: defaultAnimation,
   time: 1,
-  textAlign: 'center'
+  textAlign: 'center',
+  padding: 0
 }
 
 export default CustomFont

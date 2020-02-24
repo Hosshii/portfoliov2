@@ -11,8 +11,8 @@ const MyCard = styled.div<Partial<MyCardProps>>`
   height: ${({ height }) => height};
   text-align: ${({ textAlign }) => textAlign};
   position: relative;
-  padding: 10px 0;
-  background-color: red;
+  padding: 10px;
+  /* background-color: red; */
 `
 
 MyCard.defaultProps = {
