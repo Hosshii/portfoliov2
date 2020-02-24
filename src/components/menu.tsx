@@ -7,6 +7,8 @@ import history from '../common/history'
 import Frame from '../common/frame'
 import CustomFont from '../common/customfont'
 import { FontSize } from '../utils/const'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontColor } from '../utils/const'
 
 interface State {
   isMenuOpen: boolean
@@ -33,7 +35,12 @@ export default class Menu extends React.Component<{}, State> {
     return (
       <Fragment>
         <ToggleButtonWrapper>
-          <ToggleButton onClick={this.toggleOpenMenu}>button</ToggleButton>
+          <FontAwesomeIcon
+            icon={['fas', 'bars']}
+            color={FontColor.Light}
+            size="3x"
+            onClick={this.toggleOpenMenu}
+          ></FontAwesomeIcon>
         </ToggleButtonWrapper>
         <MenuWrapper>
           <Transition in={this.state.isMenuOpen} timeout={1000}>
@@ -88,17 +95,17 @@ const ShowMenuTitle = keyframes`
 const ToggleButtonWrapper = styled.div`
   position: fixed;
   /* position: absolute; */
-  right: 10px;
+  right: 20px;
+  top: 5px;
   z-index: 10;
-`
-const ToggleButton = styled(Button)`
-  background: linear-gradient(45deg, #fe6b8b 30%, #ff8e53 90%);
-  border-radius: 3px;
-  border: 0;
-  color: white;
-  height: 48px;
-  padding: 0 30px;
-  box-shadow: 0 3px 5px 2px rgba(255, 105, 135, 0.3);
+  cursor: pointer;
+  transition: transform 0.15s;
+  :hover {
+    transform: scale(1.1);
+  }
+  :active {
+    transform: scale(1);
+  }
 `
 
 const ItemButton = styled(Button)`
@@ -108,11 +115,11 @@ const ItemButton = styled(Button)`
 
 const MenuWrapper = styled.div`
   box-sizing: border-box;
-  height: calc(100% - 60px);
+  height: calc(100% - 70px);
   position: absolute;
   width: 100px;
   right: 10px;
-  top: 50px;
+  top: 60px;
   position: fixed;
   z-index: 10;
 `
