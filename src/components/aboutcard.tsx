@@ -1,6 +1,6 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Grid } from '@material-ui/core'
-import styled, { keyframes, createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 import { FrameColor, FontSize } from '../utils/const'
 import CustomFont from '../common/customfont'
 import MyCard from '../common/myCard'
@@ -10,6 +10,35 @@ interface Props {
   title: string
   content: Content[]
   bottom?: string
+}
+export interface Content {
+  title?: string
+  content: string | JSX.Element
+}
+
+const AboutContent = (props: Content) => {
+  return props.title ? (
+    <Fragment key={props.title}>
+      <CustomGrid item xs={2}>
+        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+          {props.title}
+        </CustomFont>
+      </CustomGrid>
+      <CustomGrid item xs={10}>
+        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+          {props.content}
+        </CustomFont>
+      </CustomGrid>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <CustomGrid item xs={12}>
+        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+          {props.content}
+        </CustomFont>
+      </CustomGrid>
+    </Fragment>
+  )
 }
 const About = (props: Props) => {
   return (
@@ -28,30 +57,9 @@ const About = (props: Props) => {
               </CardTitle>
               <CardContent>
                 <Grid container spacing={1}>
-                  {props.content.map(v =>
-                    v.title ? (
-                      <Fragment>
-                        <CustomGrid item xs={2}>
-                          <CustomFont textAlign="left" size={FontSize.subsubtitle}>
-                            {v.title}
-                          </CustomFont>
-                        </CustomGrid>
-                        <CustomGrid item xs={10}>
-                          <CustomFont textAlign="left" size={FontSize.subsubtitle}>
-                            {v.content}
-                          </CustomFont>
-                        </CustomGrid>
-                      </Fragment>
-                    ) : (
-                      <Fragment>
-                        <CustomGrid item xs={12}>
-                          <CustomFont textAlign="left" size={FontSize.subsubtitle}>
-                            {v.content}
-                          </CustomFont>
-                        </CustomGrid>
-                      </Fragment>
-                    )
-                  )}
+                  {props.content.map((v, i) => (
+                    <AboutContent key={i} title={v.title} content={v.content} />
+                  ))}
                 </Grid>
               </CardContent>
               {!!props.bottom && (
@@ -81,11 +89,6 @@ const AboutCard = () => {
   )
 }
 
-interface Content {
-  title?: string
-  content: string
-}
-
 const CardTitle = styled.div`
   margin: 0 0 20px 0;
   padding: 0 0 5px 5px;
@@ -104,7 +107,7 @@ const CardContent = styled.div`
 
 const CardBottom = styled.div`
   margin: 20px 0 0 0;
-  padding: 5px 0 0 5px;
+  padding: 10px 0 0 5px;
   border-top: solid 3px ${FrameColor.Light};
 `
 const CustomGrid = styled(Grid)`
@@ -157,4 +160,4 @@ const toolContent: Content[] = [
   { title: 'OS', content: 'mac OS' }
 ]
 // const interestBottom = '下の方はあまり使ったことないです'
-export default AboutCard
+export default About
