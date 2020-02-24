@@ -1,23 +1,28 @@
 import React, { Fragment } from 'react'
 import styled, { keyframes } from 'styled-components'
 import Frame from '../common/frame'
-import device from '../utils/media-size'
 import CustomFont from '../common/customfont'
 import MyIcons, { MyIconProps } from '../components/links'
+import { FontColor, FontSize, device, url } from '../utils/const'
 
 interface State {
   isOpen: boolean
   isFirst: boolean
+  iconIsFirst: boolean
+  iconIsOpen: boolean
 }
 export default class Top extends React.Component<{}, State> {
   constructor(props: any) {
     super(props)
-    this.state = { isFirst: true, isOpen: false }
+    this.state = { isFirst: true, isOpen: false, iconIsFirst: true, iconIsOpen: false }
   }
   componentDidMount() {
     setTimeout(() => {
       this.setState({ isOpen: true, isFirst: false })
     }, 500)
+    setTimeout(() => {
+      this.setState({ iconIsFirst: false, iconIsOpen: true })
+    }, 2300)
   }
   render() {
     return (
@@ -31,18 +36,17 @@ export default class Top extends React.Component<{}, State> {
             fadeOutFrame={fadeOutFrame}
             bold={4}
           >
-            <CustomFont delay={1.5} animation={TitleFadeIn} textAlign="left">
+            <CustomFont delay={1.6} animation={TitleFadeIn} textAlign="left" size={FontSize.title}>
               Welcome to My Website
             </CustomFont>
           </Frame>
         </TopWrapper>
         <IconFrameWrapper>
           <Frame
-            isMenuOpen={this.state.isOpen}
-            isFirst={this.state.isFirst}
-            time={1}
-            fadeInFrame={fadeInFrame}
-            fadeOutFrame={fadeOutFrame}
+            isMenuOpen={this.state.iconIsOpen}
+            isFirst={this.state.iconIsFirst}
+            time={0.8}
+            fadeInFrame={IconFadeIn}
             bold={4}
           >
             <IconWrapper>
@@ -54,14 +58,15 @@ export default class Top extends React.Component<{}, State> {
     )
   }
 }
-const icon = [
-  { icon: ['fab', 'github'], color: 'red' },
-  { icon: ['fab', 'github'], color: 'red' }
-] as MyIconProps[]
+
+const icon: MyIconProps[] = [
+  { icon: ['fab', 'github'], color: FontColor.Light, size: '3x', url: url.github },
+  { icon: ['fab', 'twitter'], color: FontColor.Light, size: '3x', url: url.twitter }
+]
 const TopWrapper = styled.div`
   position: absolute;
   top: 5%;
-  height: 70%;
+  height: 75%;
   margin: auto;
   @media ${device.mobileS} {
     left: 0;
@@ -74,8 +79,8 @@ const TopWrapper = styled.div`
 `
 const IconFrameWrapper = styled.div`
   position: absolute;
-  top: 80%;
-  height: 20%;
+  bottom: 1%;
+  height: 15%;
   @media ${device.mobileS} {
     left: 0;
     width: 100%;
@@ -144,4 +149,12 @@ const TitleFadeIn = keyframes`
     opacity: 1;
     transform: translateX(10px);
   } 
+`
+const IconFadeIn = keyframes`
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
 `
