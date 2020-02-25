@@ -1,7 +1,7 @@
 import React, { Fragment, PureComponent } from 'react'
 import { Grid } from '@material-ui/core'
-import styled from 'styled-components'
-import { FrameColor, FontSize } from '../utils/const'
+import styled, { keyframes } from 'styled-components'
+import { FrameColor, FontSize, FontColor } from '../utils/const'
 import CustomFont from '../common/customfont'
 import MyCard from '../common/myCard'
 import { Reveal } from 'react-genie'
@@ -77,10 +77,30 @@ const About = (props: Props) => {
   )
 }
 
+const showWord = keyframes`
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(200%);
+  }
+`
 const CardTitle = styled.div`
   margin: 0 0 20px 0;
   padding: 0 0 5px 5px;
   border-bottom: solid 3px ${FrameColor.Light};
+  position: relative;
+  /* ::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: red;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    animation: ${showWord} 1s ease-in 3s forwards;
+  } */
 `
 
 const GridWrapper = styled.div`
@@ -91,12 +111,36 @@ const CardContent = styled.div`
   height: 100%;
   margin-left: 10px;
   box-sizing: border-box;
+  position: relative;
+  /* ::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    color: red;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    animation: ${showWord} 1s ease-in 3s forwards;
+  } */
 `
 
 const CardBottom = styled.div`
+  position: relative;
   margin: 20px 0 0 0;
   padding: 10px 0 0 5px;
   border-top: solid 3px ${FrameColor.Light};
+  /* ::after {
+    content: '';
+    top: 10px;
+    left: 0;
+    position: absolute;
+    color: red;
+    height: calc(100% - 10px);
+    width: 100%;
+    background-color: mediumblue;
+    animation: ${showWord} 10s ease-in 3s forwards;
+  } */
 `
 const CustomGrid = styled(Grid)`
   /* border: solid 1px white; */
