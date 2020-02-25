@@ -89,7 +89,7 @@ export const device = {
   desktopL: `(min-width: ${_deviceSize.desktop})`
 }
 export const url = {
-  github: 'https://github.com/WistreHosshii',
+  github: 'https://github.com/Hosshii',
   twitter: 'https://twitter.com/hosshii4'
 }
 
