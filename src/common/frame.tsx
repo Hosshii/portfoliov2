@@ -54,7 +54,7 @@ const Frame = styled.div<{ props: Props }>`
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  background-color: #090b0a;
+  background-color: ${FrameColor.Back};
   animation: ${({ props }) => (props.isFirst || props.isMenuOpen ? props.fadeInFrame : props.fadeOutFrame)}
     ${({ props }) => props.time}s ease forwards ${({ props }) => (props.isFirst ? 'paused' : 'running')};
 `

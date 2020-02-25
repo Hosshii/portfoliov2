@@ -62,7 +62,8 @@ export const FontColor = {
 }
 export const FrameColor = {
   Light: '#1F4017',
-  Dark: '#0E170D'
+  Dark: '#0E170D',
+  Back: '#090B0A'
 }
 
 export { FontSize }
