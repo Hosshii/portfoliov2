@@ -45,7 +45,12 @@ export default class Menu extends React.Component<{}, State> {
         <MenuWrapper>
           <Transition in={this.state.isMenuOpen} timeout={1000}>
             {state => (
-              <Frame isMenuOpen={this.state.isMenuOpen} isFirst={this.state.isFirst} time={0.8}>
+              <Frame
+                isMenuOpen={this.state.isMenuOpen}
+                isFirst={this.state.isFirst}
+                time={0.8}
+                fadeOutFrame={closeAnimation}
+              >
                 {state === 'entered' && (
                   <MenuContentWrapper>
                     <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left" size={FontSize.subtitle}>
@@ -53,13 +58,40 @@ export default class Menu extends React.Component<{}, State> {
                     </CustomFont>
                     {/* <MenuTitle state={state}>menu</MenuTitle> */}
                     <CustomFont delay={0.2} animation={ShowMenuText} textAlign="right">
-                      <ItemButton onClick={() => history.push('/')}>top</ItemButton>
+                      <ItemButton
+                        onClick={() => {
+                          if (history.location.pathname !== '/') {
+                            this.toggleOpenMenu()
+                          }
+                          history.push('/')
+                        }}
+                      >
+                        top
+                      </ItemButton>
                     </CustomFont>
                     <CustomFont delay={0.4} animation={ShowMenuText} textAlign="right">
-                      <ItemButton onClick={() => history.push('/about')}>about</ItemButton>
+                      <ItemButton
+                        onClick={() => {
+                          if (history.location.pathname !== '/about') {
+                            this.toggleOpenMenu()
+                          }
+                          history.push('/about')
+                        }}
+                      >
+                        about
+                      </ItemButton>
                     </CustomFont>
                     <CustomFont delay={0.6} animation={ShowMenuText} textAlign="right">
-                      <ItemButton onClick={() => history.push('/work')}>work</ItemButton>
+                      <ItemButton
+                        onClick={() => {
+                          if (history.location.pathname !== '/work') {
+                            this.toggleOpenMenu()
+                          }
+                          history.push('/work')
+                        }}
+                      >
+                        work
+                      </ItemButton>
                     </CustomFont>
                   </MenuContentWrapper>
                 )}
@@ -128,4 +160,13 @@ const MenuContentWrapper = styled.div`
   height: 100%;
   box-sizing: border-box;
   margin-top: 60px;
+`
+
+const closeAnimation = keyframes`
+  0%{
+    opacity:1;
+  }
+  100%{
+    opacity:0;
+  }
 `
