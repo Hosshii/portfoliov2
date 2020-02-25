@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./.public/index.html -p 3000 --open",
-    "build": "parcel build ./.public/index.html --out-dir build"
+    "build": "parcel build ./.public/index.html --out-dir build",
+    "deploy": "gh-pages -d build -b master",
+    "lint": "eslint --fix  ./src/**/*.{ts,tsx}"
   },
   "author": "",
   "license": "ISC",
@@ -31,7 +33,12 @@
   "devDependencies": {
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "eslint-plugin-react": "^7.18.3",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
     "typescript": "^3.7.5",
     "typescript-styled-plugin": "^0.15.0"
   }
