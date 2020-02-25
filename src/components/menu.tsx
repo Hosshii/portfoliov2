@@ -8,7 +8,7 @@ import Frame from '../common/frame'
 import CustomFont from '../common/customfont'
 import { FontSize } from '../utils/const'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FontColor } from '../utils/const'
+import { FontColor, device } from '../utils/const'
 
 interface State {
   isMenuOpen: boolean
@@ -147,13 +147,18 @@ const ItemButton = styled(Button)`
 
 const MenuWrapper = styled.div`
   box-sizing: border-box;
-  height: calc(100% - 20px);
+  height: calc(100% - 40px);
   position: absolute;
   width: 100px;
-  right: 20px;
   top: 20px;
   position: fixed;
   z-index: 10;
+  @media ${device.mobileS} {
+    right: 5px;
+  }
+  @media ${device.laptop} {
+    right: 20px;
+  }
 `
 const MenuContentWrapper = styled.div`
   width: 100%;

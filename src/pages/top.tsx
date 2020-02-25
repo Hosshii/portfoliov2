@@ -78,8 +78,8 @@ const TopWrapper = styled.div`
   height: 80%;
   margin: auto;
   @media ${device.mobileS} {
-    left: 0;
-    width: 100%;
+    left: 2.5%;
+    width: 95%;
   }
   @media ${device.laptop} {
     left: 130px;
@@ -91,8 +91,8 @@ const IconFrameWrapper = styled.div`
   bottom: 1%;
   height: 15%;
   @media ${device.mobileS} {
-    left: 0;
-    width: 100%;
+    left: 5%;
+    width: 90%;
   }
   @media ${device.laptop} {
     left: 150px;
@@ -152,11 +152,11 @@ const fadeOutFrame = keyframes`
 const TitleFadeIn = keyframes`
   0% {
     opacity: 0;
-    transform:translateX(0px);
+    transform:translateX(-10px);
   }
   100% {
     opacity: 1;
-    transform: translateX(10px);
+    transform: translateX(0px);
   } 
 `
 const IconFadeIn = keyframes`

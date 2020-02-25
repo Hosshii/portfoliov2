@@ -39,6 +39,7 @@ const Wrapper = styled.div`
 `
 const CustomLink = styled.div`
   transition: transform 0.3s;
+  cursor: pointer;
   :hover {
     transform: scale(1.2);
   }

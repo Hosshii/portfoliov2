@@ -19,21 +19,21 @@ export interface Content {
 const AboutContent = (props: Content) => {
   return props.title ? (
     <Fragment key={props.title}>
-      <CustomGrid item xs={2}>
-        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+      <CustomGrid item xs={4} md={2}>
+        <CustomFont textAlign="left" size={FontSize.normal}>
           {props.title}
         </CustomFont>
       </CustomGrid>
-      <CustomGrid item xs={10}>
-        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
-          {props.content}
+      <CustomGrid item xs={8} md={10}>
+        <CustomFont textAlign="left" size={FontSize.normal}>
+          :{props.content}
         </CustomFont>
       </CustomGrid>
     </Fragment>
   ) : (
     <Fragment>
       <CustomGrid item xs={12}>
-        <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+        <CustomFont textAlign="left" size={FontSize.normal}>
           {props.content}
         </CustomFont>
       </CustomGrid>
@@ -51,7 +51,7 @@ const About = (props: Props) => {
           <CustomGrid item xs={12}>
             <MyCard>
               <CardTitle>
-                <CustomFont textAlign="left" size={FontSize.title}>
+                <CustomFont textAlign="left" size={FontSize.subtitle}>
                   {props.title}
                 </CustomFont>
               </CardTitle>
@@ -64,7 +64,7 @@ const About = (props: Props) => {
               </CardContent>
               {!!props.bottom && (
                 <CardBottom>
-                  <CustomFont textAlign="left" size={FontSize.subsubtitle}>
+                  <CustomFont textAlign="left" size={FontSize.normal}>
                     {props.bottom}
                   </CustomFont>
                 </CardBottom>

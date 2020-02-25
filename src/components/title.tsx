@@ -42,7 +42,7 @@ const TitleWrapper = styled.div`
 const Title = styled.div`
   position: relative;
   margin: 0 auto;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
   height: 60px;
   top: 30px;

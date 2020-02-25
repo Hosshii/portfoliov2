@@ -54,8 +54,8 @@ const Wrapper = styled.div`
   margin: 0;
   padding: 0;
   @media ${device.mobileS} {
-    left: 0;
-    width: 100%;
+    left: 5%;
+    width: 90%;
   }
   @media ${device.laptop} {
     left: 130px;
@@ -77,7 +77,7 @@ const profileContent: Content[] = [
     content: '東京工業大学デジタル創作同好会traP'
   }
 ]
-const languageTitle = 'Programming..etc'
+const languageTitle = 'Programming...etc'
 const languageContent: Content[] = [
   { content: 'html/css/javascript' },
   { content: 'React.js/Vue.js' },
@@ -104,7 +104,7 @@ const likeBottom = 'Vは最近（春休みから）見はじめました'
 
 const toolTitle = 'tools'
 const toolContent: Content[] = [
-  { title: 'エディタ', content: 'VSCode.時々IntelliJ IDEA' },
+  { title: 'エディタ', content: 'VSCode. 時々IntelliJ IDEA' },
   { title: 'OS', content: 'mac OS' }
 ]
 

@@ -1,7 +1,7 @@
 var _FontSize = {
-  normal: '16',
+  normal: '18',
   large: '20',
-  xLarge: '24',
+  xLarge: '26',
   xxLarge: '30'
 }
 var FontSize = {
@@ -24,9 +24,9 @@ export const init = () => {
         // pc向け
         console.log('pc')
         _FontSize = {
-          normal: '16',
+          normal: '18',
           large: '20',
-          xLarge: '24',
+          xLarge: '26',
           xxLarge: '30'
         }
         console.log(FontSize)
