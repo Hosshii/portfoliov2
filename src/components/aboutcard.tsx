@@ -77,18 +77,6 @@ const About = (props: Props) => {
   )
 }
 
-const AboutCard = () => {
-  return (
-    <Fragment>
-      <About title={profileTitle} content={profileContent} />
-      <About title={languageTitle} content={languageContent} bottom={langBottom} />
-      <About title={interestTitle} content={interestContent} />
-      <About title={likeTitle} content={likeContent} bottom={likeBottom} />
-      <About title={toolTitle} content={toolContent} />
-    </Fragment>
-  )
-}
-
 const CardTitle = styled.div`
   margin: 0 0 20px 0;
   padding: 0 0 5px 5px;
@@ -114,50 +102,4 @@ const CustomGrid = styled(Grid)`
   /* border: solid 1px white; */
 `
 
-const profileTitle = 'profile'
-const profileContent: Content[] = [
-  {
-    title: 'HN',
-    content: 'hosshii(WistreHosshii)'
-  },
-  {
-    title: '所属',
-    content: '東京工業大学理学院一年'
-  },
-  {
-    title: 'サークル',
-    content: '東京工業大学デジタル創作同好会traP'
-  }
-]
-const languageTitle = 'programming..etc'
-const languageContent: Content[] = [
-  { content: 'html/css/javascript' },
-  { content: 'React.js/Vue.js' },
-  { content: 'golang,Docker' },
-  { content: 'C++' }
-]
-const langBottom = '下の方はあまり使ったことないです'
-
-const interestTitle = '興味分野'
-const interestContent: Content[] = [
-  { content: 'web系' },
-  { content: 'css animation' },
-  { content: '低レイヤ系(OS)' },
-  { content: '3D系' }
-]
-
-const likeTitle = '好きなもの'
-const likeContent: Content[] = [
-  { content: 'React.js,Vue.js' },
-  { content: '読書' },
-  { content: 'ホロライブ 、にじさんじ' }
-]
-const likeBottom = 'Vは最近（春休みから）見はじめました'
-
-const toolTitle = 'tools'
-const toolContent: Content[] = [
-  { title: 'エディタ', content: 'VSCode.時々IntelliJ IDEA' },
-  { title: 'OS', content: 'mac OS' }
-]
-// const interestBottom = '下の方はあまり使ったことないです'
 export default About
