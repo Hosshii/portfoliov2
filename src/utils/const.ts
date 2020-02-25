@@ -1,3 +1,62 @@
+var _FontSize = {
+  normal: '16',
+  large: '20',
+  xLarge: '24',
+  xxLarge: '30'
+}
+var FontSize = {
+  title: `${_FontSize.xxLarge}px`,
+  normal: `${_FontSize.normal}px`,
+  subtitle: `${_FontSize.xLarge}px`,
+  subsubtitle: `${_FontSize.large}px`
+}
+
+export const init = () => {
+  console.log('init')
+  document.addEventListener('DOMContentLoaded', function() {
+    // @media screen and (max-width: 780px) と同じ
+    console.log('dom loaded')
+    var mql = window.matchMedia(`screen and ${device.laptop}`)
+
+    function checkBreakPoint(mql: MediaQueryListEvent | MediaQueryList) {
+      console.log('breakpoint ')
+      if (mql.matches) {
+        // pc向け
+        console.log('pc')
+        _FontSize = {
+          normal: '16',
+          large: '20',
+          xLarge: '24',
+          xxLarge: '30'
+        }
+        console.log(FontSize)
+      } else {
+        // すまほ向け
+        console.log('sp')
+        _FontSize = {
+          normal: '16',
+          large: '20',
+          xLarge: '24',
+          xxLarge: '24'
+        }
+        console.log(FontSize)
+      }
+      FontSize = {
+        title: `${_FontSize.xxLarge}px`,
+        normal: `${_FontSize.normal}px`,
+        subtitle: `${_FontSize.xLarge}px`,
+        subsubtitle: `${_FontSize.large}px`
+      }
+    }
+
+    // ブレイクポイントの瞬間に発火
+    mql.addListener(checkBreakPoint)
+
+    // 初回チェック
+    checkBreakPoint(mql)
+  })
+}
+
 export const FontColor = {
   Light: '#76FB5B'
 }
@@ -6,18 +65,7 @@ export const FrameColor = {
   Dark: '#0E170D'
 }
 
-const _FontSize = {
-  normal: '16',
-  large: '20',
-  xLarge: '24',
-  xxLarge: '30'
-}
-export const FontSize = {
-  title: `${_FontSize.xxLarge}px`,
-  normal: `${_FontSize.normal}px`,
-  subtitle: `${_FontSize.xLarge}px`,
-  subsubtitle: `${_FontSize.large}px`
-}
+export { FontSize }
 
 const _deviceSize = {
   mobileS: '320px',
@@ -43,3 +91,5 @@ export const url = {
   github: 'https://github.com/WistreHosshii',
   twitter: 'https://twitter.com/hosshii4'
 }
+
+// var checkBreakPoint: (this: MediaQueryList, ev: MediaQueryListEvent) => any
