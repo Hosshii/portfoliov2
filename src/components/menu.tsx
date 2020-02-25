@@ -38,7 +38,7 @@ export default class Menu extends React.Component<{}, State> {
           <FontAwesomeIcon
             icon={['fas', 'bars']}
             color={FontColor.Light}
-            size="3x"
+            size="2x"
             onClick={this.toggleOpenMenu}
           ></FontAwesomeIcon>
         </ToggleButtonWrapper>
@@ -47,7 +47,7 @@ export default class Menu extends React.Component<{}, State> {
             {state => (
               <Frame isMenuOpen={this.state.isMenuOpen} isFirst={this.state.isFirst} time={0.8}>
                 {state === 'entered' && (
-                  <Fragment>
+                  <MenuContentWrapper>
                     <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left" size={FontSize.subtitle}>
                       Menu
                     </CustomFont>
@@ -61,7 +61,7 @@ export default class Menu extends React.Component<{}, State> {
                     <CustomFont delay={0.6} animation={ShowMenuText} textAlign="right">
                       <ItemButton onClick={() => history.push('/work')}>work</ItemButton>
                     </CustomFont>
-                  </Fragment>
+                  </MenuContentWrapper>
                 )}
               </Frame>
             )}
@@ -95,9 +95,9 @@ const ShowMenuTitle = keyframes`
 const ToggleButtonWrapper = styled.div`
   position: fixed;
   /* position: absolute; */
-  right: 20px;
-  top: 5px;
-  z-index: 10;
+  right: 33px;
+  top: 30px;
+  z-index: 20;
   cursor: pointer;
   transition: transform 0.15s;
   :hover {
@@ -115,11 +115,17 @@ const ItemButton = styled(Button)`
 
 const MenuWrapper = styled.div`
   box-sizing: border-box;
-  height: calc(100% - 70px);
+  height: calc(100% - 20px);
   position: absolute;
   width: 100px;
-  right: 10px;
-  top: 60px;
+  right: 20px;
+  top: 20px;
   position: fixed;
   z-index: 10;
+`
+const MenuContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-top: 60px;
 `

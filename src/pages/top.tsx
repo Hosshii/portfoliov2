@@ -36,9 +36,18 @@ export default class Top extends React.Component<{}, State> {
             fadeOutFrame={fadeOutFrame}
             bold={4}
           >
-            <CustomFont delay={1.6} animation={TitleFadeIn} textAlign="left" size={FontSize.title}>
-              Welcome to My Website
-            </CustomFont>
+            <div
+              style={{
+                position: 'absolute',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                width: '100%'
+              }}
+            >
+              <CustomFont delay={1.6} animation={TitleFadeIn} textAlign="center" size={FontSize.title}>
+                Welcome to My Website
+              </CustomFont>
+            </div>
           </Frame>
         </TopWrapper>
         <IconFrameWrapper>
@@ -65,8 +74,8 @@ const icon: MyIconProps[] = [
 ]
 const TopWrapper = styled.div`
   position: absolute;
-  top: 5%;
-  height: 75%;
+  top: 10px;
+  height: 80%;
   margin: auto;
   @media ${device.mobileS} {
     left: 0;

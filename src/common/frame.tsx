@@ -9,19 +9,19 @@ const defaultFadeInFrame = keyframes`
   0% {
       width: 0;
       height: 0;
-      right: 60px;
+      right: 50%;
       opacity: 0;
     }
     30% {
       width: 100%;
       height: 0;
-      right: 10px;
+      right: 0;
       opacity: 1;
     }
     100% {
       width: 100%;
       height: 100%;
-      right: 10px;
+      right: 0;
     }
   }
 `
@@ -30,19 +30,19 @@ const defaultFadeOutFrame = keyframes`
   0% {
       width: 100%;
       height: 100%;
-      right: 10px;
+      right: 0;
       opacity: 1;
     }
   70% {
     width: 100%;
     height: 0;
-    right: 10px;
+    right: 0;
     opacity: 1;
   }
   100% {
     width: 0;
     height: 0;
-    right: 60px;
+    right: 50%;
     opacity: 0;
   }
 `
