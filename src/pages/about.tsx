@@ -18,7 +18,7 @@ export default class About extends React.Component {
             <AboutCard title={profileTitle} content={profileContent} />
             <AboutCard title={languageTitle} content={languageContent} bottom={langBottom} />
             <AboutCard title={interestTitle} content={interestContent} />
-            <AboutCard title={likeTitle} content={likeContent} bottom={likeBottom} />
+            <AboutCard title={likeTitle} content={likeContent} />
             <AboutCard title={toolTitle} content={toolContent} />
             <AboutCard title={linkTitle} content={linkContent} />
           </AboutWrapper>
@@ -95,11 +95,7 @@ const interestContent: Content[] = [
 ]
 
 const likeTitle = '好きなもの'
-const likeContent: Content[] = [
-  { content: 'React.js,Vue.js' },
-  { content: '読書' },
-  { content: 'ホロライブ 、にじさんじ' }
-]
+const likeContent: Content[] = [{ content: 'React.js,Vue.js' }, { content: '読書' }, { content: 'moba(ゲーム)' }]
 const likeBottom = 'Vは最近（春休みから）見はじめました'
 
 const toolTitle = 'tools'
