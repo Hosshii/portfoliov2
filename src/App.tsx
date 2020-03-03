@@ -6,12 +6,8 @@ import About from './pages/about'
 import Work from './pages/work'
 import history from './common/history'
 import styled from 'styled-components'
-import { init } from './utils/const'
 
 export default class App extends React.Component {
-  componentDidMount() {
-    init()
-  }
   render() {
     return (
       <Wrapper>
