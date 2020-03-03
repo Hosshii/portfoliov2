@@ -6,9 +6,9 @@ import { Button } from '@material-ui/core'
 import history from '../common/history'
 import Frame from '../common/frame'
 import CustomFont from '../common/customfont'
-import { FontSize } from '../utils/const'
+// import { FontSize } from '../utils/const'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { FontColor, device } from '../utils/const'
+import { FontColor, device, FontSize } from '../utils/const'
 
 interface State {
   isMenuOpen: boolean
@@ -38,7 +38,7 @@ export default class Menu extends React.Component<{}, State> {
           <FontAwesomeIcon
             icon={['fas', 'bars']}
             color={FontColor.Light}
-            size="2x"
+            size="3x"
             onClick={this.toggleOpenMenu}
           ></FontAwesomeIcon>
         </ToggleButtonWrapper>
@@ -143,6 +143,7 @@ const ToggleButtonWrapper = styled.div`
 const ItemButton = styled(Button)`
   color: #76fb58;
   background-color: #090b0a;
+  font-size: ${FontSize.normal};
 `
 
 const MenuWrapper = styled.div`

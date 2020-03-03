@@ -69,8 +69,8 @@ export default class Top extends React.Component<{}, State> {
 }
 
 const icon: MyIconProps[] = [
-  { icon: ['fab', 'github'], color: FontColor.Light, size: '3x', url: url.github },
-  { icon: ['fab', 'twitter'], color: FontColor.Light, size: '3x', url: url.twitter }
+  { icon: ['fab', 'github'], color: FontColor.Light, size: '4x', url: url.github },
+  { icon: ['fab', 'twitter'], color: FontColor.Light, size: '4x', url: url.twitter }
 ]
 const TopWrapper = styled.div`
   position: absolute;
