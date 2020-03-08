@@ -56,7 +56,7 @@ const WorkWrapper = styled.div`
 
 const toolTitle = 'このサイト'
 const toolContent: Content[] = [
-  { title: '使用技術', content: 'React, typescript' },
-  { title: '作成時期', content: 'この春休み' }
+  { title: '使用技術', content: 'React.js, TypeScript' },
+  { title: '作成時期', content: '2020年2月' }
 ]
 const toolBottom = '自分一人でちゃんと作ったサイトはこれが初めてです'

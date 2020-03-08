@@ -13,7 +13,7 @@ export default class About extends React.Component {
     return (
       <Fragment>
         <Wrapper>
-          <Title title="about" />
+          <Title title="About" />
           <AboutWrapper>
             <AboutCard title={profileTitle} content={profileContent} />
             <AboutCard title={languageTitle} content={languageContent} bottom={langBottom} />
@@ -77,10 +77,11 @@ const profileContent: Content[] = [
     content: '東京工業大学デジタル創作同好会traP'
   }
 ]
-const languageTitle = 'Programming...etc'
+const languageTitle = 'skills'
 const languageContent: Content[] = [
   { content: 'HTML/CSS/JavaScript' },
   { content: 'React.js/Vue.js' },
+  { content: 'MySQL,docker' },
   { content: 'golang' },
   { content: 'C++' }
 ]
@@ -98,7 +99,7 @@ const likeTitle = '好きなもの'
 const likeContent: Content[] = [{ content: 'React.js,Vue.js' }, { content: '読書' }, { content: 'moba(ゲーム)' }]
 const likeBottom = 'Vは最近（春休みから）見はじめました'
 
-const toolTitle = 'tools'
+const toolTitle = 'Tools'
 const toolContent: Content[] = [
   { title: 'エディタ', content: 'VSCode. 時々IntelliJ IDEA' },
   { title: 'OS', content: 'macOS' }
@@ -116,7 +117,7 @@ const githubLink = () => {
   return (
     <Fragment>
       <StyledA href={url.github} target="_blank">
-        github
+        GitHub
         <FontAwesomeIcon
           icon={['fas', 'external-link-alt']}
           style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}
@@ -129,7 +130,7 @@ const twitterLink = () => {
   return (
     <Fragment>
       <StyledA href={url.twitter} target="_blank">
-        twitter
+        Twitter
         <FontAwesomeIcon
           icon={['fas', 'external-link-alt']}
           style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}

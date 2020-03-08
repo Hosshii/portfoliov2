@@ -53,7 +53,13 @@ export default class Menu extends React.Component<{}, State> {
               >
                 {state === 'entered' && (
                   <MenuContentWrapper>
-                    <CustomFont animation={ShowMenuTitle} time={0.5} textAlign="left" size={FontSize.subtitle}>
+                    <CustomFont
+                      animation={ShowMenuTitle}
+                      time={0.5}
+                      textAlign="right"
+                      size={FontSize.subtitle}
+                      padding="0 20px 0 0"
+                    >
                       Menu
                     </CustomFont>
                     {/* <MenuTitle state={state}>menu</MenuTitle> */}
@@ -117,11 +123,11 @@ const ShowMenuText = keyframes`
 const ShowMenuTitle = keyframes`
   0% {
     opacity: 0;
-    transform:translateX(0px);
+    transform:translateX(-10px);
   }
   100% {
     opacity: 1;
-    transform: translateX(10px);
+    transform: translateX(0px);
   }
 `
 const ToggleButtonWrapper = styled.div`

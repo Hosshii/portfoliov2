@@ -24,9 +24,14 @@ const AboutContent = (props: Content) => {
           {props.title}
         </CustomFont>
       </CustomGrid>
-      <CustomGrid item xs={8} md={10}>
+      <CustomGrid item xs={1} md={1}>
+        <CustomFont textAlign="right" size={FontSize.normal}>
+          :
+        </CustomFont>
+      </CustomGrid>
+      <CustomGrid item xs={7} md={9}>
         <CustomFont textAlign="left" size={FontSize.normal}>
-          :{props.content}
+          {props.content}
         </CustomFont>
       </CustomGrid>
     </Fragment>
