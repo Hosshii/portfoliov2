@@ -48,7 +48,7 @@ const defaultFadeOutFrame = keyframes`
 `
 const Frame = styled.div<{ props: Props }>`
   position: absolute;
-  /* overflow: scroll; */
+  overflow: hidden;
   border-radius: 10px;
   border: solid ${({ props }) => props.bold}px ${({ props }) => props.color};
   width: 100%;
@@ -58,6 +58,7 @@ const Frame = styled.div<{ props: Props }>`
   animation: ${({ props }) => (props.isFirst || props.isMenuOpen ? props.fadeInFrame : props.fadeOutFrame)}
     ${({ props }) => props.time}s ease forwards ${({ props }) => (props.isFirst ? 'paused' : 'running')};
 `
+
 interface Props {
   isMenuOpen: boolean
   isFirst: boolean

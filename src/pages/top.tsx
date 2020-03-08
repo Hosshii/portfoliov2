@@ -74,7 +74,7 @@ const icon: MyIconProps[] = [
 ]
 const TopWrapper = styled.div`
   position: absolute;
-  top: 10px;
+  top: 2%;
   height: 80%;
   margin: auto;
   @media ${device.mobileS} {
@@ -88,15 +88,15 @@ const TopWrapper = styled.div`
 `
 const IconFrameWrapper = styled.div`
   position: absolute;
-  bottom: 1%;
-  height: 15%;
+  bottom: 2%;
+  height: 14%;
   @media ${device.mobileS} {
     left: 5%;
     width: 90%;
   }
   @media ${device.laptop} {
-    left: 150px;
-    width: calc(100% - 300px);
+    left: 130px;
+    width: calc(100% - 260px);
   }
 `
 
