@@ -48,7 +48,7 @@ const defaultFadeOutFrame = keyframes`
 `
 const Frame = styled.div<{ props: Props }>`
   position: absolute;
-  overflow: scroll;
+  /* overflow: scroll; */
   border-radius: 10px;
   border: solid ${({ props }) => props.bold}px ${({ props }) => props.color};
   width: 100%;

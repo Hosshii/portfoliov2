@@ -66,7 +66,7 @@ const profileTitle = 'Profile'
 const profileContent: Content[] = [
   {
     title: 'HN',
-    content: 'hosshii(WistreHosshii)'
+    content: 'hosshii'
   },
   {
     title: '所属',
@@ -79,9 +79,9 @@ const profileContent: Content[] = [
 ]
 const languageTitle = 'Programming...etc'
 const languageContent: Content[] = [
-  { content: 'html/css/javascript' },
+  { content: 'HTML/CSS/JavaScript' },
   { content: 'React.js/Vue.js' },
-  { content: 'golang,Docker' },
+  { content: 'golang' },
   { content: 'C++' }
 ]
 const langBottom = '下の方はあまり使ったことないです'
@@ -89,7 +89,7 @@ const langBottom = '下の方はあまり使ったことないです'
 const interestTitle = '興味分野'
 const interestContent: Content[] = [
   { content: 'web系' },
-  { content: 'css animation' },
+  { content: 'CSS animation' },
   { content: '低レイヤ系(OS)' },
   { content: '3D系' }
 ]
@@ -101,7 +101,7 @@ const likeBottom = 'Vは最近（春休みから）見はじめました'
 const toolTitle = 'tools'
 const toolContent: Content[] = [
   { title: 'エディタ', content: 'VSCode. 時々IntelliJ IDEA' },
-  { title: 'OS', content: 'mac OS' }
+  { title: 'OS', content: 'macOS' }
 ]
 
 const StyledA = styled.a`
