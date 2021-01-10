@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import { FrameColor, FontSize } from '../utils/const'
 import styled, { keyframes } from 'styled-components'
 import Title from '../components/title'
-import { device } from '../utils/const'
+import { device, url, FontColor } from '../utils/const'
 import WorkCard, { Content } from '../components/aboutcard'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default class Work extends React.Component {
   constructor(props: any) {
@@ -14,6 +16,7 @@ export default class Work extends React.Component {
         <Title title="Work" />
         <WorkWrapper>
           <WorkCard title={toolTitle} content={toolContent}></WorkCard>
+          <WorkCard title={rs9ccTitle} content={rs9ccContent}></WorkCard>
         </WorkWrapper>
       </Wrapper>
     )
@@ -54,9 +57,53 @@ const WorkWrapper = styled.div`
   animation: ${show} 1s ease 1.5s forwards;
 `
 
+const StyledA = styled.a`
+  text-decoration: none;
+  :link,
+  :visited,
+  :active {
+    color: ${FontColor.Light};
+  }
+`
+
+const portfolioLink = () => {
+  return (
+    <Fragment>
+      <StyledA href={url.portfolio} target="_blank">
+        link
+        <FontAwesomeIcon
+          icon={['fas', 'external-link-alt']}
+          style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}
+        />
+      </StyledA>
+    </Fragment>
+  )
+}
+
 const toolTitle = 'このサイト'
 const toolContent: Content[] = [
   { title: '使用技術', content: 'React.js, TypeScript' },
-  { title: '作成時期', content: '2020年2月' }
+  { title: '作成時期', content: '2020年2月' },
+  { content: portfolioLink() }
 ]
-const toolBottom = '自分一人でちゃんと作ったサイトはこれが初めてです'
+
+const rs9ccLink = () => {
+  return (
+    <Fragment>
+      <StyledA href={url.rs9cc} target="_blank">
+        link
+        <FontAwesomeIcon
+          icon={['fas', 'external-link-alt']}
+          style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}
+        />
+      </StyledA>
+    </Fragment>
+  )
+}
+
+const rs9ccTitle = 'mini cコンパイラ'
+const rs9ccContent: Content[] = [
+  { title: '使用技術', content: 'Rust' },
+  { title: '作成時期', content: '2020年11月~現在' },
+  { content: rs9ccLink() }
+]

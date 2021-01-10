@@ -16,7 +16,7 @@ export default class About extends React.Component {
           <Title title="About" />
           <AboutWrapper>
             <AboutCard title={profileTitle} content={profileContent} />
-            <AboutCard title={languageTitle} content={languageContent} bottom={langBottom} />
+            <AboutCard title={languageTitle} content={languageContent} />
             <AboutCard title={interestTitle} content={interestContent} />
             <AboutCard title={likeTitle} content={likeContent} />
             <AboutCard title={toolTitle} content={toolContent} />
@@ -70,7 +70,7 @@ const profileContent: Content[] = [
   },
   {
     title: '所属',
-    content: '東京工業大学理学院一年'
+    content: '東京工業大学工学院情報通信系2年'
   },
   {
     title: 'サークル',
@@ -79,25 +79,28 @@ const profileContent: Content[] = [
 ]
 const languageTitle = 'skills'
 const languageContent: Content[] = [
+  { content: 'Rust' },
+  { content: 'golang' },
+  { content: 'MySQL,docker' },
   { content: 'HTML/CSS/JavaScript' },
   { content: 'React.js/Vue.js' },
-  { content: 'MySQL,docker' },
-  { content: 'golang' },
   { content: 'C++' }
 ]
-const langBottom = '下の方はあまり使ったことないです'
 
 const interestTitle = '興味分野'
 const interestContent: Content[] = [
-  { content: 'web系' },
-  { content: 'CSS animation' },
-  { content: '低レイヤ系(OS)' },
-  { content: '3D系' }
+  { content: '関数型言語、型システム' },
+  { content: '低レイヤ系(OS,コンパイラ)' },
+  { content: 'web系' }
 ]
 
 const likeTitle = '好きなもの'
-const likeContent: Content[] = [{ content: 'React.js,Vue.js' }, { content: '読書' }, { content: 'moba(ゲーム)' }]
-const likeBottom = 'Vは最近（春休みから）見はじめました'
+const likeContent: Content[] = [
+  { content: 'Rust,Haskell,golang' },
+  { content: 'React.js,Vue.js' },
+  { content: '読書' },
+  { content: 'moba(ゲーム)' }
+]
 
 const toolTitle = 'Tools'
 const toolContent: Content[] = [
