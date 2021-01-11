@@ -1,17 +1,9 @@
 {
   "name": "node14",
-  "dockerComposeFile": [
-    "../docker-compose_dev.yml"
-  ],
+  "dockerComposeFile": ["../docker-compose_dev.yml"],
   // "appPort": [3000],
   "service": "app",
-  "extensions": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "octref.vetur",
-    "peakchen90.vue-beautify",
-    "hookyqr.beautify"
-  ],
+  "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode", "hookyqr.beautify"],
   "postCreateCommand": "npm install",
   "workspaceFolder": "/app",
   "shutdownAction": "stopCompose"
