@@ -83,8 +83,7 @@ const languageContent: Content[] = [
   { content: 'golang' },
   { content: 'MySQL,docker' },
   { content: 'HTML/CSS/JavaScript' },
-  { content: 'React.js/Vue.js' },
-  { content: 'C++' }
+  { content: 'React.js/Vue.js' }
 ]
 
 const interestTitle = '興味分野'
