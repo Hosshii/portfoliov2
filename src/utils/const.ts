@@ -47,4 +47,5 @@ export const url = {
   twitter: 'https://twitter.com/hosshii4',
   portfolio: 'https://github.com/Hosshii/Hosshii.github.io',
   rs9cc: 'https://github.com/Hosshii/rs9cc',
+  rs9cc_web: 'https://rs9cc-web.netlify.app',
 }

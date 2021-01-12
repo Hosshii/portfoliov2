@@ -84,14 +84,28 @@ const toolTitle = 'このサイト'
 const toolContent: Content[] = [
   { title: '使用技術', content: 'React.js, TypeScript' },
   { title: '作成時期', content: '2020年2月' },
-  { content: portfolioLink() }
+  { content: portfolioLink() },
 ]
 
 const rs9ccLink = () => {
   return (
     <Fragment>
       <StyledA href={url.rs9cc} target="_blank">
-        link
+        github
+        <FontAwesomeIcon
+          icon={['fas', 'external-link-alt']}
+          style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}
+        />
+      </StyledA>
+    </Fragment>
+  )
+}
+
+const demoLink = () => {
+  return (
+    <Fragment>
+      <StyledA href={url.rs9cc_web} target="_blank">
+        demo
         <FontAwesomeIcon
           icon={['fas', 'external-link-alt']}
           style={{ fontSize: 14, marginLeft: '5px', marginBottom: '1px' }}
@@ -105,5 +119,6 @@ const rs9ccTitle = 'mini cコンパイラ'
 const rs9ccContent: Content[] = [
   { title: '使用技術', content: 'Rust' },
   { title: '作成時期', content: '2020年11月~現在' },
-  { content: rs9ccLink() }
+  { content: rs9ccLink() },
+  { content: demoLink() },
 ]
